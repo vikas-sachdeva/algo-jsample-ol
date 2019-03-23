@@ -29,4 +29,7 @@
 		</dependency>
 	</dependencies>
 
+  <modules>
+    <module>sorting</module>
+  </modules>
 </project>
