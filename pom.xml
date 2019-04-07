@@ -31,5 +31,6 @@
 
   <modules>
     <module>sorting</module>
+    <module>searching</module>
   </modules>
 </project>
