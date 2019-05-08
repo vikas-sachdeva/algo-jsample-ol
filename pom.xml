@@ -32,5 +32,6 @@
   <modules>
     <module>sorting</module>
     <module>searching</module>
+    <module>tree</module>
   </modules>
 </project>
