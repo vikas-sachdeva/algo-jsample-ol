@@ -1,43 +1,41 @@
 package algo.jsample.trie;
 
-public class TrieOperations {
+public class TrieOperations<T> {
 
 	private static final int ALPHABET_SIZE = 26;
 
-	static class TrieNode {
+	private static class TrieNode<T> {
 
-		TrieNode[] childNodes = new TrieNode[ALPHABET_SIZE];
+		private TrieNode<T>[] childNodes = new TrieNode[ALPHABET_SIZE];
 
-		String value;
+		private T value;
 
 	}
 
-	private TrieNode rootNode;
+	private TrieNode<T> rootNode;
 
 	public TrieOperations() {
-		rootNode = new TrieNode();
-		rootNode.value = "";
+		rootNode = new TrieNode<>();
+		rootNode.value = null;
 	}
 
-	public TrieNode insert(String key, String value) {
-		TrieNode temp = rootNode;
+	public TrieNode<T> insert(String key, T value) {
+		TrieNode<T> temp = rootNode;
 		for (int i = 0; i < key.length(); i++) {
 			char ch = key.charAt(i);
 			int index = ch - 'a';
 			if (temp.childNodes[index] == null) {
-				TrieNode trieNode = new TrieNode();
+				TrieNode<T> trieNode = new TrieNode<T>();
 				temp.childNodes[index] = trieNode;
-				temp = trieNode;
-			} else {
-				temp = temp.childNodes[index];
 			}
+			temp = temp.childNodes[index];
 		}
 		temp.value = value;
 		return temp;
 	}
 
-	public String search(String key) {
-		TrieNode temp = rootNode;
+	public T search(String key) {
+		TrieNode<T> temp = rootNode;
 		int i = 0;
 		for (; i < key.length(); i++) {
 			char ch = key.charAt(i);
