@@ -11,5 +11,6 @@
 	<modules>
 		<module>bubble-sort</module>
     <module>merge-sort</module>
+    <module>insertion-sort</module>
   </modules>
 </project>
