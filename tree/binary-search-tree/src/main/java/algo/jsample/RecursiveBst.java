@@ -104,4 +104,37 @@ public class RecursiveBst<T extends Comparable<T>> {
 		postOrderTraversal(node.rightNode);
 		System.out.println(node.value);
 	}
+
+	public void levelOrderTraversal() {
+		for (int i = 1; i <= getHeight(); i++) {
+			levelOrderTraversal(rootNode, i);
+			System.out.println();
+		}
+	}
+
+	private void levelOrderTraversal(TreeNode<T> node, int height) {
+		if (node == null) {
+			return;
+		}
+		if (height == 1) {
+			System.out.print(node.value + " ");
+		} else {
+			levelOrderTraversal(node.leftNode, height - 1);
+			levelOrderTraversal(node.rightNode, height - 1);
+		}
+
+	}
+
+	public int getHeight() {
+		return getSubTreeHeight(rootNode);
+	}
+
+	private int getSubTreeHeight(TreeNode<T> node) {
+		if (node == null) {
+			return 0;
+		}
+		int leftTreeHeight = getSubTreeHeight(node.leftNode);
+		int rightTreeHeight = getSubTreeHeight(node.rightNode);
+		return 1 + Math.max(leftTreeHeight, rightTreeHeight);
+	}
 }
