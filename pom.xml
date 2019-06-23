@@ -33,5 +33,6 @@
     <module>sorting</module>
     <module>searching</module>
     <module>tree</module>
+    <module>greedy</module>
   </modules>
 </project>
