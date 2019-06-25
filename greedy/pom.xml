@@ -11,5 +11,6 @@
   <modules>
     <module>activity-selection-problem</module>
     <module>egyptian-fraction</module>
+    <module>minimum-swaps-bracket-balancing</module>
   </modules>
 </project>
